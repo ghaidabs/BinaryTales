@@ -6,8 +6,8 @@ import AboutUs from './pages/AboutUs.jsx';
 import Search from './pages/Search.jsx';
 import Blog from './pages/Blog.jsx';
 import BookList from './pages/BookList.jsx';
-import Login from "../../logsign/client/src/components/Login";
-import Signup from "../../logsign/client/src/components/Signup";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const App = ()=> {
   const user = localStorage.getItem("token");
