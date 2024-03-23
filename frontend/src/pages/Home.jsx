@@ -1,13 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 function Home () {
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        window.location.reload();
+    };
     return (
         <main>
             <header>
-                <a href="/" className="logo">cs-books</a>
-                <nav>
-                    <div>login</div>
-                </nav>
+                <div>
+                    <Link to ="/" className="logo">cs-books</Link>
+                    <nav>
+                        <button onClick={handleLogout}>
+                            Logout
+                        </button>
+                    </nav>
+                </div>
             </header>
         </main>
     );
