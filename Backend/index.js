@@ -6,7 +6,6 @@ import loginRoutes from './routes/login.js';
 import signupRoutes from './routes/signup.js';
 
 const app = express();
-  
 //middleware
 app.use(express.json());
 app.use(cors());
