@@ -1,30 +1,52 @@
-import React from 'react'
-import { Routes, Route , Navigate} from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import AboutUs from './pages/AboutUs.jsx';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Navbar from './pages/Navbar.jsx';
+import Footer from './pages/Footer.jsx';
+import Home from './pages/Home/Home.jsx';
+import About from './pages/About.jsx';
 import Search from './pages/Search.jsx';
 import Blog from './pages/Blog.jsx';
 import BookList from './pages/BookList.jsx';
-import Login from "./pages/Login/index.jsx";
-import Signup from "./pages/Signup/index.jsx";
+import Login from './pages/Login/index.jsx';
+import Signup from './pages/Signup/index.jsx';
+import Book from './pages/Book.jsx';
+import Contact from './pages/Contact.jsx';
 
-const App = ()=> {
+const App = () => {
   const user = localStorage.getItem("token");
-  return(
-    <div>
-        <Routes> 
-          <Route path="/" element={user ? <Home /> : <Navigate replace to="/login" />} />
-          <Route path="/home" element={<Home />} />
-          <Route path='/blog' element={<Blog />} /> 
-          <Route path='/aboutUs' element={<AboutUs />} /> 
-          <Route path='/search' element={<Search />} />
-          <Route path='/bookList' element={<BookList />} />
-          <Route path="/signup" exact element={<Signup />} />
-          <Route path="/login" exact element={<Login />} />
-        </Routes>   
-    </div>
-    
-  )
+  console.log(user); // Check the value of user
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
+        <Route
+          path="/*"
+          element={
+            user ? ( // Wrap protected routes with conditional check
+              <>
+                <Navbar />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path='/search' element={<Search />} />
+                  <Route path='/book' element={<Book />} />
+                  <Route path='/bookList' element={<BookList />} />
+                  <Route path='/blog' element={<Blog />} />
+                  <Route path='/contact' element={<Contact />} />
+                  <Route path='/about' element={<About />} />
+                </Routes>
+                <Footer />
+              </>
+            ) : (
+              // If not logged in, redirect to login
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

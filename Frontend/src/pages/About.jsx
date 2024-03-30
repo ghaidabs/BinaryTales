@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-function AboutUs() {
+function About() {
     return (
         <div>
             <h2>About Us</h2>
@@ -9,4 +9,4 @@ function AboutUs() {
     );
 }
 
-export default AboutUs;
+export default About;
