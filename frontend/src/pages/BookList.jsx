@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-function BookList() {
+function Booklist() {
     return (
         <div>
             <h2>BookList </h2>
@@ -9,4 +9,4 @@ function BookList() {
     );
 }
 
-export default BookList;
+export default Booklist;

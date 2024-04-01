@@ -9,7 +9,7 @@ function Navbar() {
   return (
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid" >
-          <Link className="navbar-brand" to="/">cs-book-website</Link>
+          <Link className="navbar-brand" to="/">BinaryTales</Link>
           <button href="/" className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -19,7 +19,7 @@ function Navbar() {
                 <Link className="nav-link" to="/about">About Us</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/booklist">BookList</Link>
+                <Link className="nav-link" to="/booklist">Booklist</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/blog">Blog</Link>
@@ -29,8 +29,8 @@ function Navbar() {
               </li>
             </ul>
             <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search for book" aria-label="Search for a book" />
-              <Link to="/search" className="btn btn-outline-success">Search</Link>
+              <input className="form-control me-2" type="search" placeholder="Search for a book" aria-label="Search for a book" />
+              <Link to="/search" className="btn btn-outline-success" style={{ backgroundColor: '#567584', borderColor:'#567584',color:'#FFFFFF'}}>Search</Link>
             </form>
           </div>
         </div>

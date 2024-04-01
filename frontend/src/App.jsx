@@ -6,7 +6,7 @@ import Home from './pages/Home/Home.jsx';
 import About from './pages/About.jsx';
 import Search from './pages/Search.jsx';
 import Blog from './pages/Blog.jsx';
-import BookList from './pages/BookList.jsx';
+import Booklist from './pages/Booklist.jsx';
 import Login from './pages/Login/index.jsx';
 import Signup from './pages/Signup/index.jsx';
 import Book from './pages/Book.jsx';
@@ -31,7 +31,7 @@ const App = () => {
                   <Route path="/" element={<Home />} />
                   <Route path='/search' element={<Search />} />
                   <Route path='/book' element={<Book />} />
-                  <Route path='/bookList' element={<BookList />} />
+                  <Route path='/bookList' element={<Booklist />} />
                   <Route path='/blog' element={<Blog />} />
                   <Route path='/contact' element={<Contact />} />
                   <Route path='/about' element={<About />} />
