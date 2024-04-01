@@ -17,17 +17,17 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
 
         <Route
-          path="/*"
+          path='/*'
           element={
             user ? ( // Wrap protected routes with conditional check
               <>
                 <Navbar />
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path='/' element={<Home />} />
                   <Route path='/search' element={<Search />} />
                   <Route path='/book' element={<Book />} />
                   <Route path='/bookList' element={<Booklist />} />
@@ -38,7 +38,7 @@ const App = () => {
               </>
             ) : (
               // If not logged in, redirect to login
-              <Navigate to="/login" replace />
+              <Navigate to='/login' replace />
             )
           }
         />
