@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from 'cors';
 import loginRoutes from './routes/login.js';
 import signupRoutes from './routes/signup.js';
+import bookRoutes from './routes/book.js';
 
 const app = express();
 //middleware
@@ -13,9 +14,12 @@ app.use(cors());
 //routes
 app.use('/api/login',loginRoutes);
 app.use('/api/signup',signupRoutes);
+app.use('/api/book', bookRoutes);
+
 
 
 app.get('/', (request, response)=> {
+    response.send('hello');
     console.log(request);
     return response.status(111).send('welcome');
 });
