@@ -5,6 +5,7 @@ import cors from 'cors';
 import loginRoutes from './routes/login.js';
 import signupRoutes from './routes/signup.js';
 import bookRoutes from './routes/book.js';
+import searchRoutes from './routes/search.js';
 
 const app = express();
 //middleware
@@ -15,6 +16,7 @@ app.use(cors());
 app.use('/api/login',loginRoutes);
 app.use('/api/signup',signupRoutes);
 app.use('/api/book', bookRoutes);
+app.use('/api/search',searchRoutes);
 
 
 

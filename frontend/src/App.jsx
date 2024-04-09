@@ -6,10 +6,11 @@ import Home from './pages/Home/Home.jsx';
 import About from './pages/About.jsx';
 import Search from './pages/Search.jsx';
 import Blog from './pages/Blog.jsx';
-import Booklist from './pages/Booklist.jsx';
+import Booklist from './pages/BookList.jsx';
 import Login from './pages/Login/index.jsx';
 import Signup from './pages/Signup/index.jsx';
 import Book from './pages/Book.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 const App = () => {
   const user = localStorage.getItem("token");
@@ -29,10 +30,12 @@ const App = () => {
                 <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='/search' element={<Search />} />
-                  <Route path='/book' element={<Book />} />
+                  <Route path='/book/:id' element={<Book />} />
                   <Route path='/bookList' element={<Booklist />} />
                   <Route path='/blog' element={<Blog />} />
                   <Route path='/about' element={<About />} />
+                  <Route path='/errorpage' element={<ErrorPage />} />
+
                 </Routes>
                 <Footer />
               </>
