@@ -10,6 +10,7 @@ import Booklist from './pages/Booklist.jsx';
 import Login from './pages/Login/index.jsx';
 import Signup from './pages/Signup/index.jsx';
 import Book from './pages/Book.jsx';
+import BookDetails from './pages/BookDetails.jsx';
 
 const App = () => {
   const user = localStorage.getItem("token");
@@ -23,7 +24,7 @@ const App = () => {
         <Route
           path='/*'
           element={
-            user ? ( // Wrap protected routes with conditional check
+            user ? ( 
               <>
                 <Navbar />
                 <Routes>
@@ -31,6 +32,7 @@ const App = () => {
                   <Route path='/search' element={<Search />} />
                   <Route path='/book' element={<Book />} />
                   <Route path='/bookList' element={<Booklist />} />
+                  <Route path ='/book/:id' element={<BookDetails />} />
                   <Route path='/blog' element={<Blog />} />
                   <Route path='/about' element={<About />} />
                 </Routes>

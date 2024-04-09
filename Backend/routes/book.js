@@ -20,15 +20,17 @@ router.post("/",async (req, res)=>{
         res.json(err);
     }
 });
-router.get('/:id',async (req, res)=>{
+router.get('/:id', async (req, res)=>{
     try {
         const { id } =req.params;
         const response = await bookModel.findById(id);
+        if (!response) {
+            return res.status(404).json({ error: 'Book not found' });
+        }
         res.status(200).json(response);
     }catch(err){
         res.status(500).json(err);
     }
 });
-
 
 export default router ;
