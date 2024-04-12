@@ -10,6 +10,7 @@ import Booklist from './pages/Booklist.jsx';
 import Login from './pages/Login/index.jsx';
 import Signup from './pages/Signup/index.jsx';
 import BookDetails from './pages/BookDetails.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 const App = () => {
   const user = localStorage.getItem("token");
@@ -33,6 +34,8 @@ const App = () => {
                   <Route path ='/book/:id' element={<BookDetails />} />
                   <Route path='/blog' element={<Blog />} />
                   <Route path='/about' element={<About />} />
+                  <Route path='/errorpage' element={<ErrorPage />} />
+
                 </Routes>
                 <Footer />
               </>
