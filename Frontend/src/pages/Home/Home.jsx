@@ -1,48 +1,50 @@
-import React, { useEffect , useState} from 'react';
-import './Home.css'
-import Card from '/src/pages/Card/Card.jsx'
-import'bootstrap/dist/css/bootstrap.min.css'
+import React, { useEffect, useState } from 'react';
+import './Home.css';
+import Card from '/src/pages/Card/Card.jsx';
+import { Link } from "react-router-dom";
+import axios from 'axios'; 
 
 const Home = () => {
-  const [key,setKey] = useState([])
-  useEffect(()=> {
-    let key="Artificial Intelligence"
-    fetch(`http://localhost:5555/api/book?Category=${key}`)
-    .then(res => res.json())
-    .then(data => {
-        setData(data);
-    })
-    .catch(err => console.log(err));
-  },[])
-  const [data, setData] = useState([])
-  return (
-    <>
-    <div className="home">
-      <div id="iframeContainer">
-        <iframe src="http://127.0.0.1:8050/" scrolling="no"></iframe>
-      </div>
-      <h1>{key}</h1>
-      <div className="container-fluid book-app">
-        <div className="row">
-          <Card data={data} />
-        </div>
-      </div>
-      <h1 value= {key}>Iot</h1>
-      <div className="container-fluid book-app">
-        <div className="row">
-          <Card data={data} />
-        </div>
-      </div>
-      <h1 value= {key}>Programming Languages</h1>
-      <div className="container-fluid book-app">
-        <div className="row">
-          <Card data={data} />
-        </div>
-      </div>
-    </div>
-      
-    </>
-  );
-}
+    const [booksByCategory, setBooksByCategory] = useState({});
+
+    useEffect(() => {
+        const fetchBooksByCategory = async () => {
+            try {
+                const response = await axios.get('http://localhost:5555/api/book'); 
+                const groupedBooks = {}; 
+                response.data.forEach(book => {
+                    if (!groupedBooks[book.Category]) {
+                        groupedBooks[book.Category] = [];
+                    }
+                    groupedBooks[book.Category].push(book);
+                });
+                setBooksByCategory(groupedBooks);
+            } catch (error) {
+                console.error('Error fetching books:', error);
+            }
+        };
+
+        fetchBooksByCategory();
+    }, []);
+
+    return (
+      <>
+          <div id="iframeContainer">
+            <iframe src="http://127.0.0.1:8050/" scrolling="no"></iframe>
+          </div>
+          <div className="books">
+              {Object.keys(booksByCategory).map(category => (
+                  <div key={category}>
+                      <h2>{category}</h2>
+                      <div className="scrolling-cards">
+                          <Card data={booksByCategory[category]} />
+                      </div>
+                  </div>
+              ))}
+          </div>
+      </>
+    );
+};
 
 export default Home;
+
