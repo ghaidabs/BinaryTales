@@ -1,59 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import "../App.css";
 
 const BookDetails = () => {
   const { id } = useParams();
   const [book, setBook] = useState(null);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`/api/book/${id}`);
-        console.log(response);
+    setLoading(true);
+    setError(null);
+    axios.get(`http://localhost:5555/api/book/${id}`)
+      .then(response => {
         setBook(response.data);
-      } catch (error) {
-        console.error(error);
-      } finally {
         setLoading(false);
-      }
-    };
-    fetchData();
+      })
+      .catch(error => {
+        console.error('Error fetching book:', error);
+        setError('Error fetching book details');
+        setLoading(false);
+      });
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>; // Display loading indicator
+    return <p>Loading...</p>;
   }
 
+  if (error) {
+    return <p>{error}</p>;
+  }
+  const handleSaveBook = () => {
+    // missing part
+    console.log("Saving book:", book);
+  };
+
   return (
-    <section className='book-details'>
-      <div className='container'>
-        <div className='book-details-content grid'>
-          <div className='book-details-img'>
-            <img src={book?.imageURL || "Image not found"} alt="cover img" />
-          </div>
-          <div className='book-details-info'>
-            <div className='book-details-item title'>
-              <span className='fw-6 fs-24'>{book?.Book_title || "Title not found"}</span>
-            </div>
-            <div className='book-details-item title'>
-              <span className='fw-6 fs-24'>{book?.Type || "Type not found"}</span>
-            </div>
-            <div className='book-details-item title'>
-              <span className='fw-6 fs-24'>{book?.Price || "Price not found"}</span>
-            </div>
-            <div className='book-details-item title'>
-              <span className='fw-6 fs-24'>{book?.Category || "Category not found"}</span>
-            </div>
-            <div className='book-details-item description'>
-              <span>{book?.Description || "Description not found"}</span>
-            </div>
-          </div>
+    <div className="BookContainer">
+      <img className="BookImage" src={book?.imageURL} alt="Book Cover" />
+      <div className="BookInfo">
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <h2 className="Title">{book?.Book_title}</h2> 
+          <button onClick={handleSaveBook}>Add to Booklist</button>
         </div>
+        <div className="Detail"><strong>Price:</strong> ${book?.Price.toFixed(2)}</div> 
+        <div className="Detail"><strong>Type:</strong> {book?.Type}</div> 
+        <div className="Detail"><strong>Category:</strong> {book?.Category}</div>
+        <div className="Detail"><strong>Number Of Pages:</strong> {book?.Number_Of_Pages}</div>
+        <p className="Detail">{book?.Description}</p>
       </div>
-    </section>
+    </div>
   );
 };
 
 export default BookDetails;
+
