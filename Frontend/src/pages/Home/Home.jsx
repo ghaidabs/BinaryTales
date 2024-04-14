@@ -36,7 +36,7 @@ const Home = () => {
               {Object.keys(booksByCategory).map(category => (
                   <div key={category}>
                       <h2>{category}</h2>
-                      <div className="scrolling-cards">
+                      <div>
                           <Card data={booksByCategory[category]} />
                       </div>
                   </div>

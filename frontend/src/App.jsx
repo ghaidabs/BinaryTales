@@ -20,7 +20,6 @@ const App = () => {
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
-
         <Route
           path='/*'
           element={
@@ -29,18 +28,16 @@ const App = () => {
                 <Navbar />
                 <Routes>
                   <Route path='/' element={<Home />} />
-                  <Route path='/search' element={<Search />} />
+                  <Route path='/search/:key' element={<Search />} />
                   <Route path='/bookList' element={<Booklist />} />
                   <Route path ='/book/:id' element={<BookDetails />} />
                   <Route path='/blog' element={<Blog />} />
                   <Route path='/about' element={<About />} />
                   <Route path='/errorpage' element={<ErrorPage />} />
-
                 </Routes>
                 <Footer />
               </>
             ) : (
-              // If not logged in, redirect to login
               <Navigate to='/login' replace />
             )
           }
