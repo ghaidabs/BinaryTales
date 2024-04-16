@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
-import Card from '/src/pages/Card/Card.jsx';
-import { Link } from "react-router-dom";
+import Card from '../Card/Card';
 import axios from 'axios'; 
 
 const Home = () => {
@@ -32,15 +31,15 @@ const Home = () => {
           <div id="iframeContainer">
             <iframe src="http://127.0.0.1:8050/" scrolling="no"></iframe>
           </div>
+
           <div className="books">
               {Object.keys(booksByCategory).map(category => (
                   <div key={category}>
-                      <h2>{category}</h2>
+                      <h2 >{category}</h2>
                       <div>
                           <Card data={booksByCategory[category]} />
                       </div>
-                  </div>
-              ))}
+                  </div>))}
           </div>
       </>
     );
