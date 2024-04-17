@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from "react-router-dom";
 function Footer() {
     return (
-          <div class="site-footer">
+          <div className="site-footer">
 
-          <footer class="text-center text-lg-start border border-white mt-xl-5 pt-4">
-          <div class="container p-4">
-            <div class="row">
-              <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                <h5 class="text-uppercase mb-4">Books Categories</h5>
-                  <ul class="list-unstyled mb-4">
+          <footer className="text-center text-lg-start border border-white mt-xl-5 pt-4">
+          <div className="container p-4">
+            <div className="row">
+              <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h5 className="text-uppercase mb-4">Books Categories</h5>
+                  <ul className="list-unstyled mb-4">
                       <li><a href="">Artificial intelligence</a></li>
                       <li><a href="">UI Design</a></li>
                       <li><a href="">Web Development</a></li>
@@ -22,16 +22,16 @@ function Footer() {
                   </ul>
               </div>
               
-              <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                <h5 class="text-uppercase mb-4">Quick Links</h5>
-                  <ul class="list-unstyled">
+              <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h5 className="text-uppercase mb-4">Quick Links</h5>
+                  <ul className="list-unstyled">
                       <li><a href="/about">About Us</a></li>
                       <li><a href="/faq">FAQ</a></li>
                       <li><a href="/">Privacy Policy</a></li>
                   </ul>
               </div>
-              <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                  <h5 class="text-uppercase mb-4">Contact Us</h5>
+              <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                  <h5 className="text-uppercase mb-4">Contact Us</h5>
         
                   <ul className="social-icons">
                       <li><a className="facebook" href="https://www.facebook.com/"><i className="fa fa-facebook"></i> Facebook</a></li>
@@ -42,19 +42,19 @@ function Footer() {
                 </div>
       
       
-              <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                <h5 class="text-uppercase mb-4">Sign up to our newsletter</h5>
+              <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h5 className="text-uppercase mb-4">Sign up to our newsletter</h5>
       
-                <div class="form-outline form-white mb-4">
-                  <input type="email" id="form5Example2" class="form-control" placeholder='Email Address'/>
+                <div className="form-outline form-white mb-4">
+                  <input type="email" id="form5Example2" className="form-control" placeholder='Email Address'/>
                 </div>
       
-                <button type="submit" class="btn btn-outline-white btn-block">Subscribe</button>
+                <button type="submit" className="btn btn-outline-white btn-block">Subscribe</button>
               </div>
             </div>
           </div>
       
-          <div class="text-center p-3 border-top border-white">
+          <div className="text-center p-3 border-top border-white">
               Copyright &copy; 2024 All Rights Reserved by our website
           </div>
         </footer>

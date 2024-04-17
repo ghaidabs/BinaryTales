@@ -29,7 +29,5 @@ const bookSchema=new mongoose.Schema({
         type : String,
         required: true,
     },
-
-
 });
 export const bookModel = mongoose.model("book",bookSchema);
