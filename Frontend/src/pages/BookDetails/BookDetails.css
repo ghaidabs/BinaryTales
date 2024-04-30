@@ -1,0 +1,36 @@
+button{
+    background-color: #567584;
+    border-radius: 10px;
+    border-color: #567584;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+.BookContainer {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+.BookImage {
+    width: 300px;
+    height: auto;
+    margin-right: 30px;
+  }
+.BookInfo {
+    flex: 1;
+}
+.Title {
+    font-size: 32px;
+}
+.Detail {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+div{
+    margin-bottom: 10px;
+}

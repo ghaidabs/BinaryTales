@@ -6,14 +6,16 @@
 }
 #iframeContainer iframe {
   flex: 1;
-  border: none;
 }
-
+.horizontal-line {
+  height: 2px;
+  background-color: #635147;
+}
 .books{
   margin: 15px;
 }
 .books h2{
-  color:#567584;
+  color:#635147;
   font-weight:bold ;
 }
 
