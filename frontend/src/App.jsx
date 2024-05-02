@@ -11,6 +11,7 @@ import Login from './pages/Login/index.jsx';
 import Signup from './pages/Signup/index.jsx';
 import BookDetails from './pages/BookDetails/BookDetails.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
+import BookForm from './pages/BookForm/BookForm.jsx';
 
 const App = () => {
   const user = localStorage.getItem("token");
@@ -29,7 +30,8 @@ const App = () => {
                     <Route path='/' element={<Home />} />
                     <Route path='/search/:key' element={<Search />} />
                     <Route path='/booklist' element={<Booklist />} />
-                    <Route path ='/book/:id' element={<BookDetails/>} />
+                    <Route path='/book/:id' element={<BookDetails/>} />
+                    <Route path='/book/add' element={<BookForm />} />
                     <Route path='/blog' element={<Blog />} />
                     <Route path='/about' element={<About />} />
                     <Route path='/errorpage' element={<ErrorPage />} />

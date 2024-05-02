@@ -51,6 +51,9 @@ function Navbar() {
                 <Link className="nav-link" to="/booklist" style={{ color: '#635147',fontSize: '22px' }}>Booklist</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/book/add" style={{ color: '#635147',fontSize: '22px' }}>Add Book</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/blog" style={{ color: '#635147',fontSize: '22px' }}>Blog</Link>
               </li>
               <li className="nav-item" onClick={handleLogout}>
