@@ -14,7 +14,7 @@ const BookForm = () => {
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [customCategory, setCustomCategory] = useState('');
   const [customType, setCustomType] = useState('');
-  const [success, setSuccess] = useState(false); // add a state to track success
+  const [success, setSuccess] = useState(false);
 
 
   const handleChange = (e) => {
@@ -60,7 +60,7 @@ const BookForm = () => {
     <form className="bookForm" onSubmit={handleSubmit}>
       {success? (
         <div>
-          <p>BOOK ADDED SUCCESSFULLY !</p>
+          <p>BOOK ADDED SUCCESSFULLY TO OUR LIBRARY !</p>
         </div>
       ) : (
         <>
