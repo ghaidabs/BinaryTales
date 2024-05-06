@@ -1,0 +1,60 @@
+.bookForm {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.bookForm p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: #635147;
+  margin: 10px;
+}
+.bookForm label {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.bookForm input,
+.bookForm select {
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.bookForm select {
+  appearance: menulist;
+}
+
+.bookForm select option[value="Other"] {
+  padding-right: 20px;
+}
+
+.bookForm input[type="text"] + input[type="text"],
+.bookForm select + select {
+  margin-top: 20px;
+}
+
+.bookForm button {
+  background-color: #635147;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  width:150px;
+  font-size: 18px;
+  align-self: center;
+  
+}
+
+  
+ 

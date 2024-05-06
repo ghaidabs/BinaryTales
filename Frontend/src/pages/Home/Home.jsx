@@ -28,10 +28,13 @@ const Home = () => {
 
     return (
       <>
-          <div id="iframeContainer">
+        <br></br>
+        <div className="horizontal-line"></div>
+        <div id="iframeContainer">
             <iframe src="http://127.0.0.1:8050/" scrolling="no"></iframe>
-          </div>
-
+        </div>
+        <div className="horizontal-line"></div>
+        <br></br>
           <div className="books">
               {Object.keys(booksByCategory).map(category => (
                   <div key={category}>

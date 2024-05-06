@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import "../App.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { addBook, removeBook } from '../Booklist/BooklistSlice.jsx';
+import './BookDetails.css'
 
 const BookDetails = () => {
   const { id } = useParams();
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const dispatch = useDispatch();
+  const books = useSelector((state) => state.booklist.books);
+
 
   useEffect(() => {
     setLoading(true);
@@ -31,10 +36,16 @@ const BookDetails = () => {
   if (error) {
     return <p>{error}</p>;
   }
-  const handleSaveBook = () => {
-    // missing part
-    console.log("Saving book:", book);
+  
+  const handleAddToBooklist = () => {
+    dispatch(addBook(book));
   };
+  
+  const handleRemoveFromBooklist = () => {
+    dispatch(removeBook(book._id));
+  };
+
+  const isBookInBooklist = books.some((b) => b._id === book._id);
 
   return (
     <div className="BookContainer">
@@ -42,7 +53,9 @@ const BookDetails = () => {
       <div className="BookInfo">
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <h2 className="Title">{book?.Book_title}</h2> 
-          <button onClick={handleSaveBook}>Add to Booklist</button>
+          <button onClick={isBookInBooklist? handleRemoveFromBooklist : handleAddToBooklist}>
+            {isBookInBooklist? 'Remove from Booklist' : 'Add to Booklist'}
+          </button>
         </div>
         <div className="Detail"><strong>Price:</strong> ${book?.Price.toFixed(2)}</div> 
         <div className="Detail"><strong>Type:</strong> {book?.Type}</div> 
@@ -55,4 +68,3 @@ const BookDetails = () => {
 };
 
 export default BookDetails;
-
