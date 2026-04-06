@@ -1,45 +1,135 @@
 # BinaryTales
 
-A website offering a curated collection of **computer science books** for students, developers and enthusiasts.
+A full-stack book discovery and management platform with interactive analytics dashboard. BinaryTales provides a seamless experience for users to discover books, manage their collections, and explore data-driven insights about the book market.
+
 
 ## Overview
-BinaryTales provides easy access to computer science books across various topics, helping learners explore and deepen their knowledge in programming, algorithms, AI, data science and more.
+
+BinaryTales is a modern web application built with cutting-edge technologies across the full stack. It combines a robust Node.js backend with a responsive React frontend and a Python-powered analytics dashboard to deliver a complete book management ecosystem.
+
 
 ## Features
-- Browse and search computer science books
-- Organized by categories and topics
-- User-friendly interface for quick navigation
-Perfect! I've created a comprehensive README file for your BinaryTales project. The pull request has been submitted with a detailed README that covers:
+
+- **User Authentication & Authorization**
+  - Secure user registration and login with JWT tokens
+  - Password encryption using bcrypt
+  - Role-based access control
+
+- **Book Management**
+  - Browse and discover books with detailed information
+  - Search functionality across book catalog
+  - Add, update, and manage book collections
+  - RESTful API for all book operations
+
+- **Advanced Search**
+  - Search books by title, author, and other attributes
+  - Filter and sort capabilities
+  - Real-time search results
+
+- **Interactive Analytics Dashboard**
+  - Top 10 books ranked by user ratings
+  - Median price analysis by book type
+  - Beautiful data visualizations using Plotly
+  - Custom color scheme and styling
+
+- **Responsive Design**
+  - Mobile-friendly interface
+  - Adaptive layout for all screen sizes
+  - Smooth user experience across devices
+
+---
+
+## Tech Stack
+
+### **Backend**
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| **Node.js** | Latest | JavaScript runtime |
+| **Express.js** | ^4.18.2 | Web framework & routing |
+| **MongoDB** | ^6.3.0 | NoSQL database |
+| **Mongoose** | ^8.2.0 | MongoDB ODM |
+| **JWT (jsonwebtoken)** | ^9.0.2 | Authentication tokens |
+| **bcrypt** | ^5.1.1 | Password hashing |
+| **CORS** | ^2.8.5 | Cross-origin resource sharing |
+| **Joi** | ^17.12.2 | Data validation |
+| **Joi Password Complexity** | ^5.2.0 | Password strength validation |
+| **dotenv** | ^16.4.5 | Environment variables |
+| **Nodemon** | ^3.1.0 | Development auto-reload |
+
+### **Frontend**
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| **React** | ^18.2.0 | UI library |
+| **Vite** | ^5.1.4 | Build tool & dev server |
+| **React Router DOM** | ^6.22.2 | Client-side routing |
+| **Redux** | ^5.0.1 | State management |
+| **Redux Toolkit** | ^2.2.3 | Redux utilities |
+| **Redux Persist** | ^6.0.0 | State persistence |
+| **React Redux** | ^9.1.1 | Redux React bindings |
+| **Axios** | ^1.6.8 | HTTP client |
+| **Bootstrap** | ^5.3.3 | CSS framework |
+| **React Icons** | ^5.0.1 | Icon library |
+| **React Responsive** | ^9.0.2 | Responsive design |
+| **Lodash** | ^4.17.21 | Utility library |
+| **ESLint** | ^8.56.0 | Code quality |
+
+### **Dashboard**
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| **Python** | 3.x | Programming language |
+| **Dash** | Latest | Web application framework |
+| **Plotly** | Latest | Interactive visualizations |
+| **Pandas** | Latest | Data manipulation & analysis |
 
 
-✅ **Tech Stack Breakdown** - Organized by component:
-- **Backend**: Express.js, MongoDB, Mongoose, JWT, bcrypt, etc.
-- **Frontend**: React 18, Vite, Redux, React Router, Axios, Bootstrap
-- **Dashboard**: Python, Pandas, Dash, Plotly
+## Quick Start
 
-✅ **Architecture** - ASCII diagram showing how the three components interact
+### **Prerequisites**
+- **Node.js** v14+ and npm (for Backend & Frontend)
+- **Python** 3.7+ (for Dashboard)
+- **MongoDB Atlas** account (Cloud database)
+- **Git** installed on your machine
 
-✅ **Installation Instructions** - Step-by-step for all three parts:
-- Backend setup with Node.js
-- Frontend setup with npm/yarn
-- Dashboard setup with Python
+##  Running the Application
 
-✅ **Configuration Guide** - Database connection, JWT setup, environment variables
+### **Option 1: Development Mode (All Components)**
 
-✅ **API Documentation** - All endpoints documented:
-- `/api/login` - User authentication
-- `/api/signup` - User registration
-- `/api/book` - Book operations
-- `/api/search` - Book search functionality
+**Terminal 1 - Backend:**
+```bash
+cd Backend
+npm run dev
+# Server running on localhost:5555
+```
 
-✅ **Project Structure** - Complete folder layout explanation
+**Terminal 2 - Frontend:**
+```bash
+cd frontend
+npm run dev
+# App running on localhost:5173
+```
 
-✅ **Running Instructions** - How to start all services
+**Terminal 3 - Dashboard:**
+```bash
+cd Dashboard
+python dashboard.py
+# Dashboard on localhost:8050
+```
 
-✅ **Language Composition** - JavaScript 78.2%, CSS 13.8%, Python 5.4%, HTML 2.6%
+### **Option 2: Production Build**
 
-✅ **Contributing Guidelines** - Best practices for contributors
+**Frontend Build:**
+```bash
+cd frontend
+npm run build
+# Creates optimized build in dist/ folder
+npm run preview  # Preview production build
+```
 
-✅ **Troubleshooting** - Common issues and solutions
+**Backend Production:**
+```bash
+cd Backend
+npm start
+# Runs with optimized settings
+```
+---
 
-The README is now ready to help developers understand and work with your project!
